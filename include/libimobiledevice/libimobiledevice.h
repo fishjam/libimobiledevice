@@ -106,6 +106,12 @@ LIBIMOBILEDEVICE_API_MSC void idevice_set_debug_callback(idevice_debug_cb_t call
 LIBIMOBILEDEVICE_API_MSC void idevice_set_debug_level(int level);
 
 /**
+ * enable log into file(now just work for idevice_id -d -f)
+ *
+ */
+LIBIMOBILEDEVICE_API_MSC void idevice_enable_logfile(char* logfile);
+
+/**
  * Register a callback function that will be called when device add/remove
  * events occur.
  *

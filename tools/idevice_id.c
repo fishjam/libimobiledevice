@@ -48,6 +48,7 @@ static void print_usage(int argc, char **argv)
 	printf("  for which the name should be retrieved.\n\n");
 	printf("  -l, --list\t\tlist UDID of all attached devices\n");
 	printf("  -d, --debug\t\tenable communication debugging\n");
+	printf("  -f, --logfile\t\twrite log into file(idevice_id.log,just for debug)\n");
 	printf("  -h, --help\t\tprints usage information\n");
 	printf("\n");
 	printf("Homepage: <" PACKAGE_URL ">\n");
@@ -68,6 +69,10 @@ int main(int argc, char **argv)
 	for (i = 1; i < argc; i++) {
 		if (!strcmp(argv[i], "-d") || !strcmp(argv[i], "--debug")) {
 			idevice_set_debug_level(1);
+			continue;
+		}
+		else if (!strcmp(argv[i], "-f") || !strcmp(argv[i], "--logfile")) {
+			idevice_enable_logfile("idevice_id.log");
 			continue;
 		}
 		else if (!strcmp(argv[i], "-l") || !strcmp(argv[i], "--list")) {

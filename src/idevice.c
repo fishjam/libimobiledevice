@@ -258,6 +258,12 @@ LIBIMOBILEDEVICE_API void idevice_set_debug_callback(idevice_debug_cb_t callback
 LIBIMOBILEDEVICE_API void idevice_set_debug_level(int level)
 {
 	internal_set_debug_level(level);
+	libusbmuxd_set_debug_level(level);
+}
+
+LIBIMOBILEDEVICE_API void idevice_enable_logfile(const char* logfile)
+{
+	libusbmuxd_enable_logfile(logfile);
 }
 
 LIBIMOBILEDEVICE_API idevice_error_t idevice_new(idevice_t * device, const char *udid)
